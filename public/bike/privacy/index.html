@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보 처리방침 - Bikevia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root {
+      --fg: #111;
+      --bg: #fff;
+      --muted: #777;
+      --line: #e5e5e5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #f5f5f5;
+        --bg: #111;
+        --muted: #888;
+        --line: #2a2a2a;
+      }
+    }
+    body {
+      margin: 0;
+      padding: 64px 24px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      line-height: 1.75;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    a {
+      color: inherit;
+      text-underline-offset: 3px;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .back {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back:hover,
+    .back:focus-visible {
+      color: var(--fg);
+      text-decoration: underline;
+    }
+    .lang {
+      display: flex;
+      border: 1.5px solid var(--fg);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .lang button {
+      padding: 6px 14px;
+      border: 0;
+      background: transparent;
+      color: var(--fg);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .lang button[aria-pressed="true"] {
+      background: var(--fg);
+      color: var(--bg);
+    }
+    .lang button:focus-visible {
+      outline: 2px solid var(--muted);
+      outline-offset: -4px;
+    }
+    h1 {
+      margin: 40px 0 16px;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    h2 {
+      margin: 40px 0 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .meta {
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+    .meta p {
+      margin: 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <a class="back" href="/bike/">← Bikevia</a>
+      <div class="lang" role="group" aria-label="언어 선택 / Language">
+        <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+
+    <!-- 한국어 -->
+    <article lang="ko" data-content="ko">
+      <h1>Bikevia 개인정보 처리방침</h1>
+      <div class="meta">
+        <!-- TODO: 시행일 (앱 출시일) -->
+        <!-- <p>시행일: YYYY년 MM월 DD일</p> -->
+        <p>운영자: 최라온</p>
+        <p>문의: <a href="mailto:raon@kwxl.moe">raon@kwxl.moe</a></p>
+      </div>
+
+      <h2>1. 처리하는 정보와 목적</h2>
+      <p>앱은 회원가입이나 로그인 기능을 제공하지 않으며, 사용자의 이름, 이메일, 전화번호 등의 개인정보를 수집하거나 저장하지 않습니다.</p>
+      <ul>
+        <li><strong>현재 위치 표시:</strong> 지도 화면을 보는 동안 기기 위치를 받아 현재 위치를 표시합니다. 이 목적의 위치는 주행 기록으로 저장하지 않습니다.</li>
+        <li><strong>주행 측정·GPX 안내:</strong> 위치, 수신 시각, 정확도, 속도, 고도, 진행 방향을 받아 거리·시간·속도 계산, 주행 경로 기록 및 코스 안내에 사용합니다.</li>
+        <li><strong>주행 기록:</strong> 주행 ID, 시작·종료 시각, 주행 지표, 칼로리 추정치, GPS 지점·구간과 진행 중 기록의 복구 데이터를 기기에 저장합니다.</li>
+        <li><strong>설정:</strong> 사용자가 입력한 신장·몸무게와 테마, 화면 구성, 음성 안내 및 위치 기록 안내 확인 여부를 기기에 저장합니다. 몸무게는 칼로리 추정에 사용합니다. 입력하지 않으면 70kg을 계산 기준으로 사용하며, 신장은 칼로리 계산에 사용하지 않습니다.</li>
+        <li><strong>GPX 코스:</strong> 사용자가 고른 파일의 이름·좌표·고도 등을 기기에서 읽어 지도와 길 안내에 사용합니다. 선택한 코스는 앱 실행 중 메모리에 보관합니다.</li>
+      </ul>
+
+      <h2>2. 위치 권한과 백그라운드 기록</h2>
+      <p>현재 위치 표시, 주행 측정 및 GPX 안내에는 기기의 위치 서비스와 위치 권한이 필요합니다. 지도를 보는 동안의 위치 수신은 화면을 벗어나거나 앱이 백그라운드로 가면 중단합니다.</p>
+      <p>주행 측정 또는 GPX 안내를 처음 시작할 때 위치 기록과 화면이 꺼진 동안의 사용을 안내하고 동의를 받습니다. 동의하지 않으면 새 기록을 시작하지 않습니다. 측정 중에는 Android의 위치 포그라운드 서비스와 알림을 사용하므로 화면을 끄거나 다른 앱을 사용해도 위치 기록이 계속됩니다. 일시정지하거나 측정을 종료하면 주행 기록을 위한 위치 수신을 중단합니다. 권한을 거부하거나 기기 위치 서비스를 끄면 해당 기능을 사용할 수 없습니다.</p>
+
+      <h2>3. 외부 서비스와 데이터 이동</h2>
+      <p>앱 운영자의 서버로 주행 기록, GPX 파일, 신체 정보를 전송하지 않습니다. 광고·분석 서비스에도 이 정보를 전송하지 않습니다.</p>
+      <p>지도를 표시할 때 앱은 이용자 기기에서 OpenStreetMap Foundation의 기본 지도 타일 서버(https://tile.openstreetmap.org)로 필요한 타일을 직접 요청합니다. 요청에는 표시 영역의 타일 좌표·확대 수준과 앱 식별 문자열이 포함됩니다. 통신 과정에서 IP 주소 등 네트워크 정보도 OpenStreetMap Foundation에 전달되어 처리될 수 있습니다. 타일 좌표로 지도를 본 대략적인 지역을 알 수 있으며, 현재 위치 따라가기를 사용하면 그 주변 타일을 요청합니다. 앱 운영자는 타일 요청을 자체 서버로 중계하거나 해당 요청 정보를 수집·보관하지 않습니다. 정확한 GPS 좌표, 전체 주행 기록 및 GPX 파일은 타일 요청에 포함되지 않습니다. 요청은 OpenStreetMap Foundation의 전 세계 캐시 서버 중 하나에서 처리될 수 있습니다. 자세한 내용은 <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">https://osmfoundation.org/wiki/Privacy_Policy</a>를 참고해 주세요.</p>
+      <p>위치 값은 Android와 기기에 설정된 위치 서비스가 제공합니다. 음성 안내는 기기에 설치된 TTS 엔진을 사용하며 앱은 마이크로 음성을 수집하지 않습니다. Android 또는 기기 제공자의 백업·기기 이전 설정에 따라 앱 데이터가 백업·복원될 수 있습니다. 사용자가 내보낸 GPX 파일은 사용자가 선택한 저장 위치나 서비스에서 관리됩니다.</p>
+
+      <h2>4. 보관과 삭제</h2>
+      <p>완료한 주행 기록은 사용자가 삭제할 때까지 기기에 보관합니다. 앱의 주행 기록에서 삭제하면 해당 주행 요약과 GPS 지점을 함께 삭제합니다. 이동거리가 0m인 주행은 완료 기록으로 남기지 않습니다. 진행 중 기록의 복구 데이터는 주행 종료·폐기 또는 앱 데이터 초기화 때까지 보관합니다.</p>
+      <p>신체 정보와 설정은 사용자가 변경·삭제하거나 앱 데이터를 초기화할 때까지 보관합니다. GPX 코스는 앱 실행 중 메모리에 보관하며, 앱을 다시 시작하면 다시 선택해야 합니다. 받은 지도 타일은 기기에 캐시될 수 있고, 운영체제의 저장 공간 관리 또는 앱 데이터 초기화에 따라 삭제됩니다.</p>
+      <p>앱을 삭제하거나 앱 데이터를 초기화하면 기기에 저장된 앱 데이터가 제거됩니다. 시스템 백업에 남은 데이터, 앱 밖으로 내보낸 GPX 파일과 다른 앱·서비스에 사용자가 따로 저장한 파일은 각 기기·서비스의 설정에서 관리해야 합니다.</p>
+
+      <h2>5. 이용자의 선택과 문의</h2>
+      <p>기기 설정에서 위치 권한을 철회할 수 있습니다. 앱에서 주행 기록을 삭제하고 신체 정보와 음성 안내 설정을 변경할 수 있습니다. 개인정보의 열람·정정·삭제·처리 정지 또는 이 처리방침에 관한 문의는 <a href="mailto:raon@kwxl.moe">raon@kwxl.moe</a>로 보내 주세요. 문의 시 보내주신 이메일 주소와 내용은 답변을 위해 사용하고, 더 이상 필요하지 않으면 삭제합니다.</p>
+
+      <h2>6. 보호 조치와 변경</h2>
+      <p>주행 기록과 설정은 앱 전용 저장 영역에서 관리하며, 지도 타일은 HTTPS로 요청합니다. 처리 항목이나 외부 서비스가 바뀌면 이 처리방침을 갱신합니다.</p>
+    </article>
+
+    <!-- English -->
+    <article lang="en" data-content="en" hidden>
+      <h1>Bikevia Privacy Policy</h1>
+      <div class="meta">
+        <!-- TODO: Effective date (app release date) -->
+        <!-- <p>Effective date: Month DD, YYYY</p> -->
+        <p>Operator: Choi Raon</p>
+        <p>Contact: <a href="mailto:raon@kwxl.moe">raon@kwxl.moe</a></p>
+      </div>
+
+      <h2>1. Information Processed and Purposes</h2>
+      <p>The app does not provide sign-up or login features and does not collect or store personal information such as your name, email address, or phone number.</p>
+      <ul>
+        <li><strong>Current location display:</strong> The app receives your device's location while you view the map to show your current position. Location received for this purpose is not saved as a ride record.</li>
+        <li><strong>Ride tracking and GPX guidance:</strong> The app receives location, reception time, accuracy, speed, altitude, and heading to calculate distance, time, and speed, record your route, and guide you along a course.</li>
+        <li><strong>Ride records:</strong> The app stores the ride ID, start and end times, ride metrics, estimated calories, GPS points and segments, and recovery data for a ride in progress on your device.</li>
+        <li><strong>Settings:</strong> The app stores the height and weight you enter, your theme and screen layout choices, voice guidance settings, and whether you have acknowledged the location recording notice on your device. Your weight is used to estimate calories. If you do not enter a weight, the calculation uses 70 kg. Height is not used to calculate calories.</li>
+        <li><strong>GPX courses:</strong> The app reads the name, coordinates, altitude, and other data from a file you select on your device to display the course on the map and provide guidance. The selected course is kept in memory while the app is running.</li>
+      </ul>
+
+      <h2>2. Location Permission and Background Recording</h2>
+      <p>Displaying your current location, tracking rides, and providing GPX guidance require your device's location services and location permission. Location updates used to display your position on the map stop when you leave that screen or the app moves to the background.</p>
+      <p>When you first start ride tracking or GPX guidance, the app explains location recording, including use while the screen is off, and asks for your agreement. If you do not agree, a new recording does not start. During tracking, the app uses an Android location foreground service and notification, so location recording continues while the screen is off or you use another app. Location updates for ride recording stop when you pause or end tracking. If you deny location permission or turn off device location services, these features will not work.</p>
+
+      <h2>3. External Services and Data Transfers</h2>
+      <p>The app does not send ride records, GPX files, or body measurements to a server operated by the app developer. It does not send this information to advertising or analytics services.</p>
+      <p>To display the map, the app directly requests the necessary tiles from the OpenStreetMap Foundation's standard tile server (https://tile.openstreetmap.org) from your device. Each request includes the tile coordinates and zoom level for the visible area and an app identification string. Network information, including your IP address, may also be sent to and processed by the OpenStreetMap Foundation during the request. Tile coordinates can reveal the approximate area you are viewing. When you use the follow-current-location feature, the app requests tiles around your current location. The app operator does not route tile requests through its own server or collect or retain information from those requests. Exact GPS coordinates, complete ride records, and GPX files are not included in tile requests. A request may be handled by one of the OpenStreetMap Foundation's cache servers around the world. For details, see <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">https://osmfoundation.org/wiki/Privacy_Policy</a>.</p>
+      <p>Location data is provided by Android and the location services configured on your device. Voice guidance uses a text-to-speech engine installed on your device; the app does not collect audio through the microphone. App data may be backed up and restored according to Android or your device provider's backup and device transfer settings. GPX files you export are managed by the storage location or service you choose.</p>
+
+      <h2>4. Retention and Deletion</h2>
+      <p>Completed ride records remain on your device until you delete them. Deleting a ride in the app also deletes its summary and GPS points. A ride with a recorded distance of 0 m is not saved as a completed record. Recovery data for a ride in progress is retained until the ride is ended or discarded, or the app data is cleared.</p>
+      <p>Body measurements and settings are retained until you change or delete them, or clear the app data. A selected GPX course is kept in memory while the app is running; you must select it again after restarting the app. Downloaded map tiles may be cached on your device and removed by the operating system's storage management or when the app data is cleared.</p>
+      <p>Uninstalling the app or clearing its data removes app data stored on your device. Data remaining in a system backup, GPX files exported outside the app, and files you separately saved in other apps or services must be managed through the settings of the relevant device or service.</p>
+
+      <h2>5. Your Choices and Contact</h2>
+      <p>You can revoke location permission in your device settings. In the app, you can delete ride records and change your body measurements and voice guidance settings. To ask about accessing, correcting, deleting, or stopping the processing of your personal information, or about this policy, contact <a href="mailto:raon@kwxl.moe">raon@kwxl.moe</a>. The email address and message you send will be used to respond to your inquiry and deleted when no longer needed.</p>
+
+      <h2>6. Safeguards and Changes</h2>
+      <p>Ride records and settings are kept in the app's private storage area, and map tiles are requested over HTTPS. This policy will be updated if the information processed or external services change.</p>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      var titles = {
+        ko: "개인정보 처리방침 - Bikevia",
+        en: "Privacy Policy - Bikevia"
+      };
+      var buttons = document.querySelectorAll(".lang button");
+      var articles = document.querySelectorAll("[data-content]");
+
+      function setLang(lang) {
+        if (!titles[lang]) lang = "ko";
+        articles.forEach(function (el) {
+          el.hidden = el.dataset.content !== lang;
+        });
+        buttons.forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
+        });
+        document.documentElement.lang = lang;
+        document.title = titles[lang];
+        try { localStorage.setItem("bikevia-lang", lang); } catch (e) {}
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          setLang(btn.dataset.lang);
+          history.replaceState(null, "", "?lang=" + btn.dataset.lang);
+        });
+      });
+
+      // 우선순위: URL ?lang= → 저장된 선택 → 브라우저 언어
+      var param = new URLSearchParams(location.search).get("lang");
+      var saved = null;
+      try { saved = localStorage.getItem("bikevia-lang"); } catch (e) {}
+      var browser = (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
+      setLang(param || saved || browser);
+    })();
+  </script>
+</body>
+</html>
