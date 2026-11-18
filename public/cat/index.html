@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6fd">
+  <meta name="description" content="아기 눈표범과 함께하는 인터랙티브 3D 댄스 스튜디오">
+  <title>스노우 스텝 · 눈표범 댄스 스튜디오</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23604adb'/%3E%3Cg fill='white'%3E%3Cellipse cx='17' cy='27' rx='5' ry='7'/%3E%3Cellipse cx='27' cy='18' rx='5' ry='7'/%3E%3Cellipse cx='39' cy='18' rx='5' ry='7'/%3E%3Cellipse cx='48' cy='27' rx='5' ry='7'/%3E%3Cpath d='M17 45c0-6 9-15 15-15s15 9 15 15c0 9-11 5-15 5s-15 4-15-5Z'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="model.js"></script>
+  <script defer src="studio.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-inner">
+      <div class="wordmark"><div class="brand-icon" data-icon="paw"></div><span>SNOW<span class="brand-accent">STEP</span></span></div>
+      <span class="top-caption"><span></span> 3D DANCE STUDIO</span>
+    </div>
+  </header>
+  <main class="page">
+    <section class="intro" aria-labelledby="title">
+      <div class="eyebrow"><span data-icon="sparkle"></span> SNOW LEOPARD STUDIO</div>
+      <h1 id="title">눈표범 댄스 스튜디오<span>.</span></h1>
+      <p>아기 눈표범에게 춤을 골라 주고, 무대 위에서 함께 리듬을 타 보세요.</p>
+    </section>
+    <div class="workspace">
+      <section class="stage-card" aria-label="3D 눈표범 무대">
+        <div class="viewport" id="viewport">
+          <div class="backdrop" aria-hidden="true"></div>
+          <div class="snow" aria-hidden="true"></div>
+          <canvas id="stage" aria-label="춤추는 아기 눈표범 3D 모델" tabindex="0" aria-describedby="view-guide"></canvas>
+          <div class="status"><span></span><strong>3D STAGE</strong></div>
+          <div class="view-actions">
+            <button class="icon-button" id="reset-view" type="button" aria-label="시점 초기화" title="시점 초기화" data-icon="reset"></button>
+            <button class="icon-button" id="fullscreen" type="button" aria-label="전체 화면" title="전체 화면" data-icon="fullscreen"></button>
+          </div>
+          <div id="view-guide" class="view-guide"><span data-icon="orbit"></span> 드래그로 회전 · 스크롤로 확대</div>
+          <p id="render-error" class="render-error" hidden>3D 무대를 표시할 수 없습니다. WebGL을 지원하는 브라우저에서 열어 주세요.</p>
+        </div>
+        <div class="stage-info">
+          <div class="profile"><div class="profile-icon" data-icon="paw"></div><div><strong>스노우</strong><span>아기 눈표범</span></div></div>
+          <div class="stage-state"><span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="now-playing" aria-live="polite">스텝 터치</span></div>
+        </div>
+      </section>
+      <aside class="controls" aria-labelledby="dance-title">
+        <div class="control-heading"><div class="heading-icon" data-icon="music"></div><div><h2 id="dance-title">댄스 모음</h2><p>스노우의 다음 춤을 골라 주세요.</p></div></div>
+        <div class="dance-list" role="group" aria-label="춤 선택">
+          <button class="dance" data-dance="step" type="button" aria-pressed="true"><span class="dance-icon violet" data-icon="step"></span><span class="dance-label"><strong>스텝 터치</strong><small>좌우로 가볍게</small></span><span class="choice"></span></button>
+          <button class="dance" data-dance="hop" type="button" aria-pressed="false"><span class="dance-icon pink" data-icon="hop"></span><span class="dance-label"><strong>폴짝폴짝</strong><small>리듬에 맞춰 점프</small></span><span class="choice"></span></button>
+          <button class="dance" data-dance="spin" type="button" aria-pressed="false"><span class="dance-icon blue" data-icon="spin"></span><span class="dance-label"><strong>빙글빙글</strong><small>발을 모아 한 바퀴</small></span><span class="choice"></span></button>
+          <button class="dance" data-dance="wave" type="button" aria-pressed="false"><span class="dance-icon mint" data-icon="wave"></span><span class="dance-label"><strong>발바닥 웨이브</strong><small>앞발 들고 손인사</small></span><span class="choice"></span></button>
+        </div>
+        <div class="play-controls">
+          <div class="speed-heading"><label for="speed">재생 속도</label><output for="speed" id="speed-value">1.0×</output></div>
+          <input type="range" id="speed" min="0.5" max="1.5" step="0.1" value="1" aria-label="재생 속도">
+          <div class="speed-labels" aria-hidden="true"><span>0.5×</span><span>1.0×</span><span>1.5×</span></div>
+          <button class="play" id="play" type="button"><span data-icon="pause"></span><span id="play-label">일시정지</span></button>
+        </div>
+      </aside>
+    </div>
+    <footer><span>SNOWSTEP STUDIO</span><span><kbd>Space</kbd> 재생 / 일시정지</span></footer>
+  </main>
+</body>
+</html>
